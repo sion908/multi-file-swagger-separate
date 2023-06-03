@@ -12,7 +12,7 @@ var program = require('commander');
 program
   .version('2.0.0')
   .option('-o --output-file [output]',
-          'output file name. (Default is `separated`)',
+          'output file name. (Default is `separated.yaml`)',
           'json')
   .option('-k1 --key-level1 [list_key1]',
           "list for one-level separation. separate by ','' (Default is `info,securityDefinitions,tags`)",
@@ -67,7 +67,7 @@ try{
     console.log(`${dir_name}/index.yaml`);
     if (key_2.includes(dir_name)) {
       for(const indexes of Object.keys(dir_origin)) {
-        const filename = indexes.replace(/^\//,'').replace(/\//g,'-') + '.yaml';
+        const filename = indexes.replace(/^\//,'').replace(/\//g,'-').replace(/[{}]/g,'') + '.yaml';
         writeFile(`${dir_name}/${filename}`, dir_origin[indexes]);
         dir_origin[indexes] = {$ref: './'+filename}
         console.log('  ', filename);
@@ -76,7 +76,15 @@ try{
     writeFile(`${dir_name}/index.yaml`, dir_origin);
     original[dir_name] = {$ref: `./${dir_name}/index.yaml`}
   }
-  writeFile(`${program.args[1]? program.args[1]: 'separated'}.yaml`, original);
+  const output_file_name = 
+    program.args[1]?
+    (
+      program.args[1].match(/^([\w-]+.[\w-]+)$/)?
+        program.args[1]:
+        program.args[1]+'yaml'
+    ):
+    'separated.yaml'
+  writeFile(output_file_name, original);
   console.log('succssess');
 } catch(e) {
   console.log(e.message);
