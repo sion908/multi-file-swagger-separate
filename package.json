@@ -1,7 +1,7 @@
 {
-  "name": "multi-file-swagger",
-  "version": "2.3.0",
-  "description": "Multi-file Swagger example",
+  "name": "multi-file-swagger-utils",
+  "version": "1.0.1",
+  "description": "Multi-file Swagger separate and conbine",
   "main": "resolve.js",
   "scripts": {
     "start": "node resolve.js",

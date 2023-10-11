@@ -1,4 +1,4 @@
-# Multi-file [Swagger](http://swagger.io) example
+# multi-file-[Swagger](http://swagger.io) utils
 
 Example of how to split up a large Swagger spec into smaller files.
 
@@ -28,3 +28,7 @@ You can also output as yaml by using the `--output-format` option
 
 #### License
 MIT
+
+### Thanks
+
+https://www.npmjs.com/package/multi-file-swagger
