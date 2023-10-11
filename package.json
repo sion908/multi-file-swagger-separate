@@ -1,6 +1,6 @@
 {
   "name": "multi-file-swagger-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multi-file Swagger separate and conbine",
   "main": "resolve.js",
   "scripts": {
