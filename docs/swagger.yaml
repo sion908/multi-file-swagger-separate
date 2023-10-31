@@ -1,0 +1,27 @@
+openapi: 3.0.2
+info:
+  version: 0.0.0
+  title: Simple API
+paths:
+  /foo:
+    get:
+      responses:
+        '200':
+          description: OK
+  /bar:
+    get:
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/definitions/User'
+          description: Successful Response
+components:
+  schemas:
+    User:
+      title: user
+      type: object
+      properties:
+        name:
+          type: string

@@ -10,7 +10,6 @@ var program = require('commander');
 
 
 program
-  .version('2.0.0')
   .option('-o --output-file [output]',
           'output file name. (Default is `separated.yaml`)',
           'json')

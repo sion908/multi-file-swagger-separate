@@ -1,3 +1,4 @@
+title: user
 type: object
 properties:
   name:

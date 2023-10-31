@@ -1,5 +1,5 @@
 {
-  "name": "multi-file-swagger-utils",
+  "name": "@sion908/multi-file-swagger-utils",
   "version": "1.0.1",
   "description": "Multi-file Swagger separate and conbine",
   "main": "resolve.js",
@@ -9,8 +9,9 @@
     "test": "node resolve.js index.yaml > test/resolved.json && node resolve.js -o yaml index.yaml > test/resolved.yaml && node test/diffCheck.js"
   },
   "bin": {
-    "multi-file-swagger": "resolve.js"
+    "multi-file-swagger": "main"
   },
+  "author": "sion908 <sionn908@gmail.com> (https://sion908.github.io/sion908/)",
   "license": "MIT",
   "dependencies": {
     "commander": "^2.19.0",
