@@ -9,7 +9,7 @@
     "test": "node resolve.js index.yaml > test/resolved.json && node resolve.js -o yaml index.yaml > test/resolved.yaml && node test/diffCheck.js"
   },
   "bin": {
-    "multi-file-swagger": "main"
+    "multi-file-swagger-utils": "main"
   },
   "author": "sion908 <sionn908@gmail.com> (https://sion908.github.io/sion908/)",
   "license": "MIT",

@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@sion908/multi-file-swagger-utils@file:":
+  version "1.0.1"
+  resolved "file:"
+  dependencies:
+    "@sion908/multi-file-swagger-utils" "file:"
+    commander "^2.19.0"
+    js-yaml "^3.12.2"
+    json-refs "^3.0.12"
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.npmjs.org/argparse/-/argparse-1.0.10.tgz"
@@ -157,14 +166,6 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
-
-"multi-file-swagger@file:../../../.nodebrew/node/v18.16.0/lib/node_modules/multi-file-swagger":
-  version "2.3.0"
-  resolved "file:../../../.nodebrew/node/v18.16.0/lib/node_modules/multi-file-swagger"
-  dependencies:
-    commander "^2.19.0"
-    js-yaml "^3.12.2"
-    json-refs "^3.0.12"
 
 native-promise-only@^0.8.1:
   version "0.8.1"
