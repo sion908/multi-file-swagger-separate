@@ -1,4 +1,5 @@
 # multi-file-[Swagger](http://swagger.io) utils
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 Example of how to split up a large Swagger spec into smaller files.
 
@@ -9,7 +10,7 @@ Example of how to split up a large Swagger spec into smaller files.
 Install the node tool:
 
 ```bash
-  npm install i -d @sion908/multi-file-swagger-utils
+  npm install install @sion908/multi-file-swagger-utils --save-dev
 ```
 
 Run the command like so:
