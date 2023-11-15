@@ -9,22 +9,20 @@ Example of how to split up a large Swagger spec into smaller files.
 Install the node tool:
 
 ```bash
-  npm install -g multi-file-swagger
+  npm install i -d @sion908/multi-file-swagger-utils
 ```
 
 Run the command like so:
 
 ```bash
-  multi-file-swagger index.yaml > index.json
+  npx multi-file-swagger-utils -b docs/base.yaml -o test/resolved.yaml
 ```
 
-This will resolve every json pointer ($ref) externally or internally and then save it in a json file. Which can then be used for code generation and so on.
+This will resolve every json pointer ($ref) externally or internally and then save it in a yaml file. Which can then be used for code generation and so on.
 
+## feature
 
-You can also output as yaml by using the `--output-format` option
-```bash
-  multi-file-swagger -o yaml index.yaml > compiled.yaml
-```
+create resolve
 
 #### License
 MIT

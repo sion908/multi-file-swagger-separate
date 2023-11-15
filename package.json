@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node resolve.js",
     "separate": "node separate.js",
-    "test": "node resolve.js index.yaml > test/resolved.json && node resolve.js -o yaml index.yaml > test/resolved.yaml && node test/diffCheck.js"
+    "test": "node main -b docs/base.yaml -o test/resolved.yaml && node test/diffCheck.test.js"
   },
   "bin": {
     "multi-file-swagger-utils": "main"

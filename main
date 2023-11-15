@@ -4,6 +4,7 @@
 var resolve = require('json-refs').resolveRefs;
 var YAML = require('js-yaml');
 var fs = require('fs');
+const path = require('path');
 
 var program = require('commander');
 
@@ -23,8 +24,9 @@ program
   .parse(process.argv);
 
 const pOptions = program.opts();
+const currentWorkingDirectory = process.cwd();
 
-const file = pOptions.baseFile;
+const file = path.join(currentWorkingDirectory, pOptions.baseFile);
 const filePath = file.replace(/\w+?\.yaml$/,"")
 
 const swagger_object = { openapi: pOptions.openapi };
@@ -47,10 +49,14 @@ resolve(swagger_object, options).then(results => {
   const yamlString = YAML.dump(results.resolved)
     .replace(/\n( *)'(\/.+?)':\n/g, '\n$1$2:\n')
     .replace(/>-\n */g, '');
-  fs.writeFileSync(pOptions.outputFile, yamlString, 'utf8', e => {
-    if (e) {
-      console.log(e.message);
-      process.exit(1);
+  fs.writeFileSync(
+    path.join(currentWorkingDirectory, pOptions.outputFile),
+    yamlString,
+    'utf8', e => {
+      if (e) {
+        console.log(e.message);
+        process.exit(1);
+      }
     }
-  });
+  );
 });
