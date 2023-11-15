@@ -17,7 +17,10 @@ program
   .option('-o --output-file [output]',
           'output yaml file (Default is swagger.yaml)',
           'swagger.yaml')
-  .option('--openapi [version]',
+  .option('-a --api-specification [api_specification]',
+          'api_specification (Default is openapi)',
+          'openapi')
+  .option('-d --doc-version [version]',
           'openApi version (Default is 3.0.2)',
           '3.0.2')
   .usage('[options] <yaml file ...>')
@@ -29,7 +32,8 @@ const currentWorkingDirectory = process.cwd();
 const file = path.join(currentWorkingDirectory, pOptions.baseFile);
 const filePath = file.replace(/\w+?\.yaml$/,"")
 
-const swagger_object = { openapi: pOptions.openapi };
+const swagger_object = {};
+swagger_object[pOptions.apiSpecification]= pOptions.docVersion;
 if (!fs.existsSync(file)) {
   console.error(`File does not exist. (${file})`);
   process.exit(1);
